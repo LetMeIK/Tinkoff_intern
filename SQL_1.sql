@@ -1,12 +1,12 @@
 SELECT 
-  pilot_id, 
+  pilot_id, /*Для информативности данные пилота вывожу как id и Имя*/
   name 
 FROM 
   Пилоты 
-  INNER JOIN (
+  INNER JOIN ( /*Соединяю выборки Пиолотов и Рейсов с нужными аэропортом и датой*/
     SELECT 
       second_pilot_id, 
-      COUNT(destination) AS cnt 
+      COUNT(destination) AS cnt /*Счетчик рейсов с подходящими условиями*/
     FROM 
       Рейсы 
     WHERE 
@@ -18,4 +18,4 @@ FROM
       second_pilot_id
   ) q_in 
   ON pilot_id = q_in.second_pilot_id 
-     AND q_in.cnt = 3;
+     AND q_in.cnt = 3;  /*Учитываем счетчик*/
