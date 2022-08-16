@@ -5,7 +5,7 @@ FROM
   Пилоты 
   INNER JOIN (
     SELECT 
-      DISTINCT second_pilot_id, 
+      second_pilot_id, 
       COUNT(destination) AS cnt 
     FROM 
       Рейсы 
