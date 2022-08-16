@@ -17,5 +17,5 @@ FROM
     GROUP BY 
       second_pilot_id
   ) q_in 
-  on pilot_id = q_in.second_pilot_id 
+  ON pilot_id = q_in.second_pilot_id 
      AND q_in.cnt = 3;
